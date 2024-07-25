@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cekxip5lh5c4a"]
 
 [ext_resource type="PackedScene" uid="uid://blnhx5nlrl6ib" path="res://player.tscn" id="1_gqbvx"]
-[ext_resource type="Script" path="res://NPC.gd" id="2_o4x04"]
+[ext_resource type="PackedScene" uid="uid://cg7g32arkfcac" path="res://ennemy.tscn" id="2_vhkyf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fpsx6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -149,14 +149,11 @@ mesh = SubResource("BoxMesh_fvuvp")
 shape = SubResource("ConcavePolygonShape3D_fxjcm")
 
 [node name="Character" parent="." instance=ExtResource("1_gqbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8164, 0, 0)
-
-[node name="Area3D" type="Area3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4889, -0.0271146, -0.0154252)
 
 [node name="NPC" type="RigidBody3D" parent="."]
 lock_rotation = true
 freeze = true
-script = ExtResource("2_o4x04")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NPC"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5975, 1.62622, 10.2674)
@@ -164,5 +161,9 @@ mesh = SubResource("CapsuleMesh_8byyv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC"]
 transform = Transform3D(6.26272, 0, 0, 0, 4.01498, 0, 0, 0, 6.80735, 23.5615, 1.97117, 10.2213)
+visible = false
 shape = SubResource("BoxShape3D_fwmo6")
 disabled = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_vhkyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29815, -3.96698)
