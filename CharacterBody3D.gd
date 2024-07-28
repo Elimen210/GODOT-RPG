@@ -11,6 +11,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
 @onready var anim_player = $AnimationPlayer
 @onready var hitbox = $WeaponSlot/MeshInstance3D2/hitbox
+signal hit
+var player_health = 100.0
+var attack := 10
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -50,6 +53,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		anim_player.play("attack")
 		hitbox.monitoring = true
+		
 	
 	move_and_slide()
 
@@ -61,5 +65,7 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_hitbox_area_entered(area):
-	if area.is_in_group("ennemy"):
+	if area.is_in_group("enemy"):
 		print("Ennemy hit F*ck !!!!")
+		
+

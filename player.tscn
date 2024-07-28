@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_gsjhs"]
 [ext_resource type="PackedScene" uid="uid://pbjc0xh3wqsn" path="res://control.tscn" id="2_8lurl"]
-[ext_resource type="ArrayMesh" uid="uid://c66cj1ta6new7" path="res://Weapon2.obj" id="3_k6uxm"]
+[ext_resource type="ArrayMesh" uid="uid://c66cj1ta6new7" path="res://FBX Import/Weapon2.obj" id="3_k6uxm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ort0e"]
 
@@ -88,7 +88,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(4.44949e-09, 0.375246, 0.125664), Vector3(-1.61299e-10, -0.931447, 0.125664), Vector3(-0.487794, -2.22738, 0.0873372), Vector3(-0.487794, -2.71122, 0.0873372), Vector3(-0.487794, 3.04027, 0.0873372)]
+"values": [Vector3(4.44949e-09, 0.375246, 0.125664), Vector3(-1.61299e-10, -0.931447, 0.125664), Vector3(-0.486947, -2.22704, 0.125664), Vector3(-0.486947, -2.7105, 0.125664), Vector3(-0.487794, 3.04027, 0.0873372)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -162,7 +162,8 @@ mesh = SubResource("CapsuleMesh_ort0e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68976, 1.50956, 0)
 shape = SubResource("ConvexPolygonShape3D_2ofe8")
 
-[node name="Control" parent="." instance=ExtResource("2_8lurl")]
+[node name="Control" parent="." groups=["player"] instance=ExtResource("2_8lurl")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Neck" type="Node3D" parent="."]
 
@@ -190,5 +191,6 @@ libraries = {
 }
 playback_default_blend_time = 0.1
 
+[connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="body_entered" from="WeaponSlot/MeshInstance3D2/hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

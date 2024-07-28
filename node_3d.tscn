@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cekxip5lh5c4a"]
+[gd_scene load_steps=18 format=3 uid="uid://cekxip5lh5c4a"]
 
 [ext_resource type="PackedScene" uid="uid://blnhx5nlrl6ib" path="res://player.tscn" id="1_gqbvx"]
+[ext_resource type="Script" path="res://world.gd" id="1_xuwnk"]
 [ext_resource type="PackedScene" uid="uid://cg7g32arkfcac" path="res://ennemy.tscn" id="2_vhkyf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fpsx6"]
@@ -46,6 +47,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 size = Vector3(1.07532, 1, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_xuwnk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
