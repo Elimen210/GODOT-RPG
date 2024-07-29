@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://pbjc0xh3wqsn"]
+[gd_scene load_steps=7 format=3 uid="uid://dlff2oyl5inxi"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_wc5xo"]
-[ext_resource type="Texture2D" uid="uid://duo2iuncxjyoo" path="res://progresssphere.png" id="2_5bjsd"]
-[ext_resource type="Texture2D" uid="uid://d4g583rh8r73k" path="res://progressspherewhite.png" id="3_oqy4b"]
-[ext_resource type="Texture2D" uid="uid://dxhu60w8g56pa" path="res://progressrectangle.png" id="4_17fux"]
-[ext_resource type="Texture2D" uid="uid://gfh46mitbxun" path="res://progressrectanglewhite.png" id="5_ri0bl"]
+[ext_resource type="Texture2D" path="res://progresssphere.png" id="2_5bjsd"]
+[ext_resource type="Texture2D" path="res://progressspherewhite.png" id="3_oqy4b"]
+[ext_resource type="Texture2D" path="res://progressrectangle.png" id="4_17fux"]
+[ext_resource type="Texture2D" path="res://progressrectanglewhite.png" id="5_ri0bl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i2lw"]
 bg_color = Color(0, 0.732775, 0.062203, 1)

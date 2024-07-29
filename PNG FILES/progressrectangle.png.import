@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxhu60w8g56pa"
-path="res://.godot/imported/progressrectangle.png-ae7aeeb31d3ab5dfe418beb3dcef84d5.ctex"
+path="res://.godot/imported/progressrectangle.png-3a61d128eef95e246fa1b00dfdd3b387.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://progressrectangle.png"
-dest_files=["res://.godot/imported/progressrectangle.png-ae7aeeb31d3ab5dfe418beb3dcef84d5.ctex"]
+source_file="res://PNG FILES/progressrectangle.png"
+dest_files=["res://.godot/imported/progressrectangle.png-3a61d128eef95e246fa1b00dfdd3b387.ctex"]
 
 [params]
 

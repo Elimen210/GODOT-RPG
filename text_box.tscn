@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1p0wlilym830"]
+[gd_scene load_steps=3 format=3 uid="uid://bjtabn83pukgo"]
 
 [ext_resource type="Script" path="res://text_box.gd" id="1_jacm0"]
 [ext_resource type="Texture2D" path="res://TextBox.png" id="2_486x8"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4g583rh8r73k"
-path="res://.godot/imported/progressspherewhite.png-a8dffcd2c7ee74ff76de262e9078f697.ctex"
+uid="uid://8onb7v8tp0u1"
+path="res://.godot/imported/progressrectanglewhite1.png-5ea85b8e13a81c46ea76e075f444f29d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG FILES/progressspherewhite.png"
-dest_files=["res://.godot/imported/progressspherewhite.png-a8dffcd2c7ee74ff76de262e9078f697.ctex"]
+source_file="res://PNG FILES/progressrectanglewhite1.png"
+dest_files=["res://.godot/imported/progressrectanglewhite1.png-5ea85b8e13a81c46ea76e075f444f29d.ctex"]
 
 [params]
 

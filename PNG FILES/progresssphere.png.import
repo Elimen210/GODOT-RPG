@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duo2iuncxjyoo"
-path="res://.godot/imported/progresssphere.png-dd2cadd5d3a6d123b782c29af56434ad.ctex"
+path="res://.godot/imported/progresssphere.png-73109496c39505be31746e955589d45f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://progresssphere.png"
-dest_files=["res://.godot/imported/progresssphere.png-dd2cadd5d3a6d123b782c29af56434ad.ctex"]
+source_file="res://PNG FILES/progresssphere.png"
+dest_files=["res://.godot/imported/progresssphere.png-73109496c39505be31746e955589d45f.ctex"]
 
 [params]
 

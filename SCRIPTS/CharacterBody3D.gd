@@ -13,13 +13,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var hitbox = $WeaponSlot/MeshInstance3D2/hitbox
 signal hit
 var player_health = 100.0
+var current_health
 var attack := 10
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
+	current_health = player_health
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -68,4 +69,13 @@ func _on_hitbox_area_entered(area):
 	if area.is_in_group("enemy"):
 		print("Ennemy hit F*ck !!!!")
 		
-
+		
+func OnHit(damage):
+	current_health -= damage
+	get_node("HP Bar").Value = int((float(current_health) / player_health) / 100)
+	if current_health <= 0:
+		OnDeath()
+		
+func OnDeath():
+	get_node("CollisionShape3D").set_deffered("disabled", true)
+	get_tree().change_scene_to_file("res://SCENES/game_over.tscn")

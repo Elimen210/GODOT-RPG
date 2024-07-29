@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot RPG"
-run/main_scene="res://MAINMENU.tscn"
+run/main_scene="res://SCENES/MAINMENU.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
