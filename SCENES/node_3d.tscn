@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://c52ales331ocu"]
 
 [ext_resource type="PackedScene" uid="uid://blnhx5nlrl6ib" path="res://SCENES/player.tscn" id="1_gqbvx"]
-[ext_resource type="PackedScene" uid="uid://chxrb4saxp1ku" path="res://SCENES/enemy.tscn" id="3_cfxyp"]
+[ext_resource type="PackedScene" uid="uid://cmwaoghnpd4w1" path="res://SCENES/enemy2.tscn" id="2_vv43t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fpsx6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -149,7 +149,7 @@ mesh = SubResource("BoxMesh_fvuvp")
 shape = SubResource("ConcavePolygonShape3D_fxjcm")
 
 [node name="Character" parent="." instance=ExtResource("1_gqbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4889, -0.0271146, -0.0154252)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.4889, -0.0271146, 0.984575)
 
 [node name="NPC" type="RigidBody3D" parent="."]
 lock_rotation = true
@@ -165,5 +165,7 @@ visible = false
 shape = SubResource("BoxShape3D_fwmo6")
 disabled = true
 
-[node name="Enemy" parent="." instance=ExtResource("3_cfxyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77702, -5.84356)
+[node name="Enemy" parent="." instance=ExtResource("2_vv43t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51437, -3.47183)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

@@ -4,7 +4,8 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const DASH_VELOCITY = 30.0
 const SPEED_VELOCITY = -10.0
-@export var mouse_sensitivity = 0.5
+@export var mouse_sensitivity = 0.1
+var damage := 30
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera := $Neck/Camera3D
@@ -15,6 +16,8 @@ signal hit
 var player_health = 100.0
 var current_health
 var attack := 10
+@onready var hp_bar = get_node("HPBar")
+var percentage_hp 
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -54,7 +57,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		anim_player.play("attack")
 		hitbox.monitoring = true
-		
+				
 	
 	move_and_slide()
 
@@ -65,17 +68,32 @@ func _on_animation_player_animation_finished(anim_name):
 		hitbox.monitoring = false
 
 
-func _on_hitbox_area_entered(area):
-	if area.is_in_group("enemy"):
-		print("Ennemy hit F*ck !!!!")
-		
+func _on_hitbox_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.health -= damage
 		
 func OnHit(damage):
 	current_health -= damage
-	get_node("HP Bar").Value = int((float(current_health) / player_health) / 100)
+	HPBarUpdate()
 	if current_health <= 0:
 		OnDeath()
 		
 func OnDeath():
 	get_node("CollisionShape3D").set_deffered("disabled", true)
 	get_tree().change_scene_to_file("res://SCENES/game_over.tscn")
+	hp_bar.hide()
+
+func HPBarUpdate():
+	percentage_hp = int((float(current_health) / player_health) / 100)
+	hp_bar.Value = percentage_hp
+	if percentage_hp >= 60:
+		hp_bar.set_tint_progress("14e114")
+	elif percentage_hp <= 60  and percentage_hp >= 25:
+		hp_bar.set_tint_progress("e1be32")
+	else:
+		hp_bar.set_tint_progress("db0000")
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+		$Neck.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
