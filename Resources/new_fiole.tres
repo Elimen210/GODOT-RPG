@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FOOD_ITEM" load_steps=2 format=3 uid="uid://caul21np7xgjk"]
+
+[ext_resource type="Script" path="res://SCRIPTS/Fiole.gd" id="1_gp1sa"]
+
+[resource]
+script = ExtResource("1_gp1sa")
+HEALTH_RESTORED = 50
+ITEM_CLASS = ""
+QUANTITY = 0
+Description = ""

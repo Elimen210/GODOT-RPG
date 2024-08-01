@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://c52ales331ocu"]
+[gd_scene load_steps=19 format=3 uid="uid://c52ales331ocu"]
 
 [ext_resource type="PackedScene" uid="uid://blnhx5nlrl6ib" path="res://SCENES/player.tscn" id="1_gqbvx"]
-[ext_resource type="ArrayMesh" uid="uid://bco0wg0dmenbr" path="res://OBJ IMPORT/fiole.obj" id="2_utyb4"]
 [ext_resource type="PackedScene" uid="uid://cmwaoghnpd4w1" path="res://SCENES/enemy2.tscn" id="2_vv43t"]
 [ext_resource type="PackedScene" uid="uid://bt3v6mhpappm" path="res://SCENES/door.tscn" id="3_0ni0b"]
-[ext_resource type="Script" path="res://SCENES/Fiole.gd" id="3_kls27"]
+[ext_resource type="PackedScene" uid="uid://dtmswv6d1acf4" path="res://SCENES/fiole.tscn" id="4_oam8m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fpsx6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,9 +41,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fxjcm"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xomaw"]
-albedo_color = Color(0.278431, 1, 0.670588, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8byyv"]
 
@@ -167,14 +163,7 @@ shape = SubResource("ConcavePolygonShape3D_fxjcm")
 
 [node name="Interactable Environment" type="Node3D" parent="."]
 
-[node name="Node3D" parent="Interactable Environment" instance=ExtResource("3_0ni0b")]
-
-[node name="Fiole" type="MeshInstance3D" parent="Interactable Environment"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 28.4632, 2.44696, 10.4392)
-material_override = SubResource("StandardMaterial3D_xomaw")
-mesh = ExtResource("2_utyb4")
-skeleton = NodePath("../..")
-script = ExtResource("3_kls27")
+[node name="door" parent="Interactable Environment" instance=ExtResource("3_0ni0b")]
 
 [node name="Characters" type="Node3D" parent="."]
 
@@ -197,3 +186,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.488
 
 [node name="Enemy" parent="Characters" instance=ExtResource("2_vv43t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51437, -3.47183)
+
+[node name="Fiole" parent="." instance=ExtResource("4_oam8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1668, 0.681352, 10.6056)

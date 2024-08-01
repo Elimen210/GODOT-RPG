@@ -97,3 +97,10 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		$Neck.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
+		
+
+func _on_player_interactor_area_entered(area):
+	print("Fiole !")
+
+func _on_player_interactor_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	print("Fiole !")

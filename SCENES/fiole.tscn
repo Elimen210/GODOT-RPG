@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtmswv6d1acf4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bco0wg0dmenbr" path="res://OBJ IMPORT/fiole.obj" id="1_6u1co"]
+[ext_resource type="Script" path="res://SCENES/fiole.gd" id="1_a61ea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0pvq"]
+albedo_color = Color(0, 1, 0.415686, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wlymq"]
+radius = 1.54328
+
+[node name="fiole" type="Area3D" groups=["interactable environment"]]
+monitorable = false
+script = ExtResource("1_a61ea")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_m0pvq")
+mesh = ExtResource("1_6u1co")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_wlymq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
