@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://cmwaoghnpd4w1"]
 
-[ext_resource type="Script" path="res://SCENES/enemy2.gd" id="1_rc8po"]
+[ext_resource type="Script" path="res://SCRIPTS/enemy2.gd" id="1_rc8po"]
 [ext_resource type="ArrayMesh" uid="uid://c66cj1ta6new7" path="res://FBX Import/Weapon2.obj" id="1_rrpg4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3lp7"]

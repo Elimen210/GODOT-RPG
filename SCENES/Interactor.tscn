@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl7kp4is77cto"]
+
+[ext_resource type="Script" path="res://SCRIPTS/Interactor.gd" id="1_801x1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlhd6"]
+
+[node name="Interactor" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_801x1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dlhd6")

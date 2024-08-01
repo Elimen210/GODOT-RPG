@@ -38,9 +38,5 @@ func _on_attack_player_detection_body_exited(body):
 func death():
 	self.queue_free()
 
-func _process(delta):
-	
-	move_and_slide()
-	
 
 		

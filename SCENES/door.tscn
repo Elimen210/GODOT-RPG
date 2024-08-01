@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt3v6mhpappm"]
+
+[ext_resource type="Script" path="res://SCENES/door.gd" id="1_32l4k"]
+[ext_resource type="PackedScene" uid="uid://mjwhaet1sm2q" path="res://SCENES/interactable.tscn" id="1_tjo0d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tv0y4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vhod7"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ps6g"]
+
+[node name="door" type="Node3D"]
+script = ExtResource("1_32l4k")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.173831, 0, 0, 0, 4.0302, 0, 0, 0, 2.84432, 19.4809, 2.05793, 5.30203)
+mesh = SubResource("BoxMesh_tv0y4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vhod7")
+
+[node name="Interactable" parent="MeshInstance3D12" instance=ExtResource("1_tjo0d")]
+
+[node name="CollisionShape3D" parent="MeshInstance3D12/Interactable" index="0"]
+shape = SubResource("BoxShape3D_0ps6g")
+
+[connection signal="interacted" from="MeshInstance3D12/Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="MeshInstance3D12/Interactable"]

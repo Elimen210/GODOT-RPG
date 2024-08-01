@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://blnhx5nlrl6ib"]
+[gd_scene load_steps=12 format=3 uid="uid://blnhx5nlrl6ib"]
 
 [ext_resource type="Script" path="res://SCRIPTS/CharacterBody3D.gd" id="1_fg43h"]
 [ext_resource type="ArrayMesh" uid="uid://c66cj1ta6new7" path="res://FBX Import/Weapon2.obj" id="3_k6uxm"]
 [ext_resource type="Texture2D" uid="uid://gfh46mitbxun" path="res://PNG FILES/progressrectanglewhite.png" id="3_vmonl"]
+[ext_resource type="PackedScene" uid="uid://d1x16sa6jqfti" path="res://SCENES/player_interactor.tscn" id="4_ve4in"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ort0e"]
 
@@ -168,6 +169,10 @@ shape = SubResource("ConvexPolygonShape3D_2ofe8")
 transform = Transform3D(0.999816, -0.0191974, 0, 0.0129449, 0.674178, 0.738455, -0.0141765, -0.738319, 0.674302, 1.55547, 3.29541, 1.3146)
 fov = 110.0
 
+[node name="PlayerInteractor" parent="Neck" node_paths=PackedStringArray("player") instance=ExtResource("4_ve4in")]
+transform = Transform3D(1.23576, 0, 0, 0, 1.46349, 0, 0, 0, 4.17776, 1.56767, 1.9723, -1.42276)
+player = NodePath("../..")
+
 [node name="WeaponSlot" type="Node3D" parent="."]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="WeaponSlot"]
@@ -193,7 +198,7 @@ offset_left = 30.0
 offset_top = 34.0
 offset_right = 563.0
 offset_bottom = 74.0
-value = 100.0
+value = 10.0
 nine_patch_stretch = true
 texture_under = ExtResource("3_vmonl")
 texture_progress = ExtResource("3_vmonl")
@@ -203,3 +208,5 @@ tint_progress = Color(0.858824, 0, 0, 1)
 [connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="body_entered" from="WeaponSlot/MeshInstance3D2/hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Neck/PlayerInteractor"]
